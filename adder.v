@@ -4,7 +4,7 @@ module adder(
     output carry// Declare carry output
 );
 
-    assign Y = // Enter logic equation here
-    assign carry = //carry logic here
+    assign Y = A ^ B 
+    assign carry = A & B 
         
 endmodule
