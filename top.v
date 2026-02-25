@@ -1,6 +1,7 @@
 module top(
   input [7:0] sw,
   output [5:0] led
+  
 );
 
     light light_inst(
@@ -15,16 +16,20 @@ module top(
       .Y(led[1]),
       .carry(led[2])
     );
-
-  full_adder full_inst(
+  wire carry_between
+  full_adder FA1 (
       .A(sw[4]),
-      .A(sw[5]),
-      .B(sw[6]),
-      .B(sw[7]),
+      .B(sw[5]),
+    .Cin(1'b0)
       .Y(led[3]),
-      .Y(led[4]),
-      .carry(led[5])
+      .carry(carry_between)
     );
-    
+  full_adder FA2 (
+    .A(sw[6]),
+    .B(sw[7]),
+    .Cin(carry_between)
+    .Y(led[4]),
+    .carry(led[5])
+  );
 
 endmodule
