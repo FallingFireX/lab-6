@@ -4,7 +4,7 @@ module full_adder(
   output carry
 );
   
-  assign Y = ;//equation here
-  assign carry = ;//equation here
+  assign Y = ( ~A & ~B & Cin) | ( ~A & B & ~ Cin) | (A & B & Cin) | (A & ~B & ~Cin) ;//equation here
+  assign carry = (A & Cin) | (B & Cin) | (A & B);//equation here
 
 endmodule
