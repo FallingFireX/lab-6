@@ -17,13 +17,14 @@ module top(
     );
 
   full_adder full_inst(
-    .A(sw[4]),
-    .A(sw[5]),
-    .B(sw[6]),
-    .B(sw[7]),
-    .Y(led[3]),
-    .Y(led[4]),
-    .carry(led[5])
+      .A(sw[4]),
+      .A(sw[5]),
+      .B(sw[6]),
+      .B(sw[7]),
+      .Y(led[3]),
+      .Y(led[4]),
+      .carry(led[5])
+    );
     
 
 endmodule
